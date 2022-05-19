@@ -1,0 +1,71 @@
+.container {
+  background-color: #f5f5f1;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  border-radius: 0.5rem;
+  padding: 4rem 2.5rem;
+}
+
+/* ---------- md ------------ */
+@media (min-width: 768px) {
+  .container {
+    width: calc(2 * 100% / 3);
+  }
+}
+
+/* ---------- lg ------------ */
+@media (min-width: 1024px) {
+  .container {
+    width: calc(2 * 100% / 5);
+  }
+}
+
+.container h1 {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 800;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-top: 0;
+}
+
+form div {
+  margin-top: 2.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid #adadad;
+}
+
+form label {
+  display: block;
+  color: rgb(75 85 99);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border: none;
+  background-color: #f5f5f1;
+}
+
+form input[type="submit"] {
+  display: block;
+  width: 100%;
+  background: linear-gradient(to right, rgb(137, 244, 122), rgb(73, 159, 197));
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  text-transform: uppercase;
+  margin-top: 3.5rem;
+  transition: 0.5s;
+  opacity: 0.6;
+}
+
+form input[type="submit"]:hover {
+  cursor: pointer;
+  opacity: 1;
+}

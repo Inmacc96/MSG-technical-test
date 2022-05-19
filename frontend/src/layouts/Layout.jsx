@@ -4,15 +4,11 @@ import "./Layout.css";
 const Layout = () => {
   return (
     <>
-      <header className="bg-dsg">
-        <h1>Prueba</h1>
-      </header>
-
-      <main>
+      <main className="container-main">
         <Outlet />
       </main>
-
-      <footer className="bg-dsg">
+      
+      <footer>
         <p>&copy; 2022 - Realizado por Inma Caballero</p>
       </footer>
     </>
