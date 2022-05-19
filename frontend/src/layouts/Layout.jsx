@@ -1,12 +1,20 @@
 import { Outlet } from "react-router-dom";
+import "./Layout.css";
 
 const Layout = () => {
   return (
     <>
-      <h1>Layout</h1>
-      <div>
+      <header className="bg-dsg">
+        <h1>Prueba</h1>
+      </header>
+
+      <main>
         <Outlet />
-      </div>
+      </main>
+
+      <footer className="bg-dsg">
+        <p>&copy; 2022 - Realizado por Inma Caballero</p>
+      </footer>
     </>
   );
 };

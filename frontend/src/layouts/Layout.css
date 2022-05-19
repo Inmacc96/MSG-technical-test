@@ -1,0 +1,20 @@
+.bg-dsg {
+  background-color: darkseagreen;
+}
+
+header h1{
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+}
+
+main {
+  background-color: lightgoldenrodyellow;
+  height: 80vh;
+}
+
+footer p{
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+}
