@@ -29,3 +29,22 @@ app.post("/upload_file", upload.array("files"), function (req, res) {
   }
 });
 
+//Error handling
+app.use(function (err, req, res, next) {
+  if (err instanceof multer.MulterError) {
+    res.statusCode = 400;
+    res.send({ code: err.code });
+  } else if (err) {
+    if (err.message == "FILE_MISSING") {
+      res.statusCode = 400;
+      res.send({ code: err.message });
+    } else {
+      res.statusCode = 500;
+      res.send({ code: "GENERIC_ERROR" });
+    }
+  }
+});
+
+const server = app.listen(8081, function () {
+  console.log("Server started at 8081");
+});
