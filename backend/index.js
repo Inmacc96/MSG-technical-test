@@ -21,3 +21,11 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.post("/upload_file", upload.array("files"), function (req, res) {
+  if (!req.files) {
+    throw Error("FILE_MISSING");
+  } else {
+    res.send({ status: "success" });
+  }
+});
+
