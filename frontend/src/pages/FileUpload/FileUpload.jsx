@@ -6,8 +6,10 @@ import "./FileUpload.css";
 
 const FileUpload = () => {
   const [selectedFiles, setSelectedFiles] = useState([]);
+  const [progress, setProgress] = useState();
 
   const handleChange = (files) => {
+    setProgress(0);
     setSelectedFiles(files);
 
     let formData = new FormData();
@@ -18,6 +20,9 @@ const FileUpload = () => {
     axiosInstance.post("/upload_file", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
+      },
+      onUploadProgress: (data) => {
+        setProgress(Math.round(100 * (data.loaded / data.total)));
       },
     });
   };
@@ -31,6 +36,18 @@ const FileUpload = () => {
         hoverTitle="Drop here"
         handleChange={handleChange}
       />
+      {progress && (
+        <div className="wrapper">
+          <div className="progress-bar">
+            <span
+              className="progress-bar-fill"
+              style={{ width: `${progress}%` }}
+            >
+              {progress}
+            </span>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

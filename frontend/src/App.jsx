@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import Login from "./pages/Login/Login";
-import FileUpload from "./pages/FileUpload";
+import FileUpload from "./pages/FileUpload/FileUpload";
 
 function App() {
   return (
