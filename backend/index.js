@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import multer from "multer";
+import bodyParser from "body-parser";
 
 import upload from "./upload.js";
 
@@ -44,6 +45,23 @@ app.use(function (err, req, res, next) {
     }
   }
 });
+
+app.use(bodyParser.json());
+
+const authenticateUser = async (req, res) => {
+  const { username, password } = req.body;
+
+  // Check if the username is "Growth"
+  if (username === "Growth") {
+    res.json({ msg: `Ok, your encrypted password is ${password}` });
+  } else {
+    res.json({ msg: "NO" });
+  }
+};
+
+const checkPassword = (username, password) => {};
+
+app.post("/login", authenticateUser);
 
 const server = app.listen(8081, function () {
   console.log("Server started at 8081");
