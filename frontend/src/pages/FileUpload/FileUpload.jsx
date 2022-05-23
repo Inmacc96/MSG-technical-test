@@ -3,7 +3,7 @@ import { FileUploader } from "react-drag-drop-files";
 import axiosInstance from "../../utils/axios";
 import Spinner from "../../components/Spinner/Spinner";
 import FileExtension from "../../components/FileExtension/FileExtension";
-import {  formatDate, formatBytes } from "../../helpers";
+import { formatDate, formatBytes } from "../../helpers";
 
 import "./FileUpload.css";
 
@@ -47,12 +47,13 @@ const FileUpload = () => {
             multiple={true}
             hoverTitle="Drop here"
             handleChange={handleChange}
+            classes="file-uploader"
           />
 
           {progress > 0 && progress < 100 && <Spinner />}
 
-          { progress !== 0 && (
-            <>
+          {progress !== 0 && (
+            <div className="progressbar">
               <div className="progressbar-info">
                 <span className="progressbar-text">
                   {progress === 100
@@ -63,13 +64,13 @@ const FileUpload = () => {
                 </span>
                 <span className="progressbar-amount">{progress}%</span>
               </div>
-              <div className="progressbar">
+              <div className="bar">
                 <div
                   className="progressbar-fill"
                   style={{ width: `${progress}%` }}
                 ></div>
               </div>
-            </>
+            </div>
           )}
         </div>
         <div className="container-files">
