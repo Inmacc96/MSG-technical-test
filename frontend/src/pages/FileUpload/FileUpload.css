@@ -1,48 +1,56 @@
+/* ---------------------------- HEADER ---------------------------- */
 .header-fileupload {
   text-align: center;
   background: linear-gradient(to right, #fcb0b3, #445e93);
   padding: 1rem;
   color: #000;
+  font-size: small;
 }
+
+/* ---------------------------- CONTAINER ---------------------------- */
 
 .container-fileupload {
   margin: 0 auto;
   background-color: rgb(245, 238, 238);
-  padding: 3rem 5rem;
-  height: calc(100vh - 267.875px);
-  display: grid;
-  grid-template-columns: 35% 55%;
+  padding: 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
   gap: 4rem;
+  min-height: calc(100vh - 258.875px);
 }
 
-/* .dragdropfile-progress {
-  width: 100%;
-} */
-/* ---------- md ------------ */
-/* @media (min-width: 768px) {
-  .dragdropfile-progress {
-    width: 25%;
-  }
-} */
+/* ---------------------------- DRAG AND DROP FILES ---------------------------- */
 
-/* ---------- lg ------------ */
-/* @media (min-width: 1024px) {
-  .dragdropfile-progress {
-    width: 35%;
-  }
-}  */
+.dragdropfile-progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
 
 .dragdropfile-progress h2 {
   text-align: center;
   color: #445e93;
   margin-bottom: 3rem;
+  font-size: larger;
+  text-transform: capitalize;
+}
+
+.file-uploader {
+  width: 50%;
+}
+
+/* ---------------------------- PROGRESS BAR ---------------------------- */
+
+.progressbar {
+  width: 100%;
+  margin-top: 4rem;
 }
 
 .progressbar-info {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.25rem;
-  margin-top: 2rem;
 }
 
 .progressbar-text {
@@ -59,7 +67,7 @@
   color: #445e93;
 }
 
-.progressbar {
+.bar {
   width: 100%;
   background-color: rgb(215, 217, 220);
   border-radius: 9999px;
@@ -72,63 +80,46 @@
   background-color: #445e93;
 }
 
-.removeFiles {
-  width: 50%;
-  margin-top: 3.5rem;
-  padding: 1rem;
-  text-transform: uppercase;
-  font-weight: 900;
-  color: #ddd;
-  background-color: #445e93;
-  border: none;
-  border-radius: 0.75rem;
+/* ---------------------------- UPLOADED FILES ---------------------------- */
+
+.container-files {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 }
-
-.files {
-  height: calc(100vh - 370px);
-  overflow-y: scroll;
-  padding: 0 2.5rem;
-  background-color: rgb(246, 243, 243);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 1.2rem;
-}
-
-/* ---------- md ------------ */
-/* @media (min-width: 768px) {
-  .files {
-    width: 45%;
-  }
-} */
-
-/* ---------- lg ------------ */
-/* @media (min-width: 1024px) {
-  .files {
-    width: 55%;
-  }
-} */
 
 .container-files h2 {
   text-align: center;
   color: #445e93;
   margin-bottom: 3rem;
+  font-size: larger;
+  text-transform: capitalize;
+}
+
+.files {
+  width: 100%;
+  padding: 0 1rem;
+  background-color: rgb(246, 243, 243);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 1.2rem;
 }
 
 .no-filesuploaded {
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
-  /*   margin-top: 10rem; */
 }
 
 .file {
   margin-top: 1.5rem;
-  padding: 0.5rem;
   padding-bottom: 1.5rem;
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.75rem;
   width: 100%;
   border-bottom: 0.1rem solid #000;
+  overflow-x: scroll;
 }
 
 .file:first-child {
@@ -136,22 +127,24 @@
 }
 
 .file:last-child {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   border: none;
 }
 
 .file-name {
   margin: 0;
   margin-bottom: 0.5rem;
-  font-size: medium;
+  font-size: small;
   font-weight: 600;
 }
 
 .file-size-date {
   color: #666;
   margin: 0;
-  font-size: small;
+  font-size: smaller;
 }
+
+/* ---------------------------- FOOTER  ---------------------------- */
 
 .footer-fileUpload p {
   padding-top: 1.5rem;
@@ -160,4 +153,108 @@
   background-color: rgb(245, 238, 238);
   font-weight: 600;
   margin: 0;
+}
+
+/* ---------------------------- MEDIA QUERIES  ---------------------------- */
+
+/* ---------- sm ------------ */
+@media (min-width: 576px) {
+  .header-fileupload {
+    font-size: medium;
+  }
+
+  .dragdropfile-progress h2 {
+    font-size: 1.5em;
+  }
+
+  .container-files h2 {
+    font-size: 1.5em;
+  }
+
+  .progressbar {
+    width: 80%;
+  }
+
+  .file-name {
+    font-size: medium;
+  }
+  .file-size-date {
+    font-size: small;
+  }
+}
+
+/* ---------- md ------------ */
+@media (min-width: 768px) {
+  .container-fileupload {
+    flex-direction: row;
+    gap: 3rem;
+    padding: 3rem 4rem;
+    height: calc(100vh - 267.875px);
+  }
+  .dragdropfile-progress {
+    width: 45%;
+  }
+  .container-files {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+  .files {
+    width: 70%;
+    padding: 0 2.5rem;
+    min-height: 20%;
+    max-height: calc(100vh - 370px);
+    overflow-y: scroll;
+  }
+
+  .file {
+    gap: 1.5rem;
+  }
+}
+
+/* ---------- lg ------------ */
+@media (min-width: 1024px) {
+  .container-fileupload {
+    padding: 3rem 5rem;
+    gap: 2rem;
+  }
+
+  .dragdropfile-progress {
+    width: 50%;
+  }
+  .container-files {
+    width: 50%;
+  }
+
+  .files {
+    width: 70%;
+  }
+
+  .progressbar {
+    width: 65%;
+  }
+}
+
+/* ---------- xl ------------ */
+@media (min-width: 1280px) {
+  .files {
+    width: 60%;
+  }
+
+  .progressbar {
+    width: 60%;
+  }
+}
+
+/* ---------- 2xl ------------ */
+@media (min-width: 1536px) {
+  .files {
+    width: 50%;
+  }
+
+  .progressbar {
+    width: 50%;
+  }
 }
