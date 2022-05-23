@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import axiosInstance from "../../utils/axios";
 import Spinner from "../../components/Spinner/Spinner";
+import FileExtension from "../../components/FileExtension/FileExtension";
 
 import "./FileUpload.css";
 
@@ -69,6 +70,27 @@ const FileUpload = () => {
               </div>
             </>
           )}
+        </div>
+        <div className="container-files">
+          <h2> Uploaded files</h2>
+          <div className="files">
+            {!selectedFiles || selectedFiles.length === 0 ? (
+              <p className="no-filesuploaded">No files uploaded</p>
+            ) : (
+              progress === 100 &&
+              selectedFiles.map((file) => (
+                <div
+                  className="file"
+                  key={Date.now() + Math.random().toString(36).substr(2)}
+                >
+                  <FileExtension file={file} />
+                  <div className="file-description">
+                    <p className="file-name">{file.name}</p>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
         </div>
       </div>
 
