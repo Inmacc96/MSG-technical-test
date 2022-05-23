@@ -148,7 +148,7 @@
 
 .footer-fileUpload p {
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 2.5rem;
   text-align: center;
   background-color: rgb(245, 238, 238);
   font-weight: 600;
@@ -175,6 +175,10 @@
     width: 80%;
   }
 
+  .files {
+    width: 80%;
+  }
+
   .file-name {
     font-size: medium;
   }
@@ -189,13 +193,14 @@
     flex-direction: row;
     gap: 3rem;
     padding: 3rem 4rem;
-    height: calc(100vh - 267.875px);
+    min-height: 0;
+    height: calc(100vh - 290.875px);
   }
   .dragdropfile-progress {
-    width: 45%;
+    width: 40%;
   }
   .container-files {
-    width: 65%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -204,7 +209,7 @@
   .files {
     width: 70%;
     padding: 0 2.5rem;
-    min-height: 20%;
+    min-height: 15%;
     max-height: calc(100vh - 370px);
     overflow-y: scroll;
   }
