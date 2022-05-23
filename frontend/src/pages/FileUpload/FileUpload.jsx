@@ -51,7 +51,7 @@ const FileUpload = () => {
 
           {progress > 0 && progress < 100 && <Spinner />}
 
-          {!error && progress !== 0 && (
+          { progress !== 0 && (
             <>
               <div className="progressbar-info">
                 <span className="progressbar-text">
