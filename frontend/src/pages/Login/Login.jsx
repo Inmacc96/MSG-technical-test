@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Error from "../../components/Error/Error";
 import { useNavigate } from "react-router-dom";
+import bcrypt from "bcryptjs";
+import axiosInstance from "../../utils/axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "./Login.css";
 
@@ -36,7 +40,44 @@ const Login = () => {
     }
 
     setError("");
+    setName("");
+    setPassword("");
     navigate("/fileUpload");
+  };
+
+  // Encrypted password
+  const salt = bcrypt.genSaltSync(10);
+  const hashedPassword = bcrypt.hashSync(password, salt);
+
+  const sendAPI = async () => {
+    if (name == "" && password == "") {
+      setError("Los campos son obligatorios");
+      return;
+    }
+
+    if (name === "") {
+      setError("El nombre del usuario es obligatorio");
+      return;
+    }
+
+    if (password === "") {
+      setError("La contraseña es obligatoria");
+      return;
+    }
+    setError("");
+
+    const data = { username: name, password: hashedPassword };
+
+    const response = await axiosInstance.post("/login", data);
+
+    if (response.data.msg === "NO") {
+      toast.error(`${response.data.msg}`);
+    } else {
+      toast.success(`${response.data.msg}`);
+    }
+
+    setName("");
+    setPassword("");
   };
 
   return (
@@ -70,6 +111,12 @@ const Login = () => {
 
             <input type="submit" value="Log In" />
           </form>
+
+          <button className="button-sendAPI" onClick={sendAPI}>
+            Send API
+          </button>
+
+          <ToastContainer theme="colored" />
         </div>
       </div>
 
