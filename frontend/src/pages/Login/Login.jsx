@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Error from "../../components/Error/Error";
 import { useNavigate } from "react-router-dom";
+
 import "./Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -14,13 +15,13 @@ const Login = () => {
     e.preventDefault();
 
     // Check the email and password is not empty and the password is at least 8 characters long.
-    if (email == "" && password == "") {
+    if (name == "" && password == "") {
       setError("Los campos son obligatorios");
       return;
     }
 
-    if (email === "") {
-      setError("El email es obligatorio");
+    if (name === "") {
+      setError("El nombre del usuario es obligatorio");
       return;
     }
 
@@ -35,37 +36,47 @@ const Login = () => {
     }
 
     setError("");
-    navigate("/fileUpload")
+    navigate("/fileUpload");
   };
 
   return (
-    <div className="container">
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            placeholder="Introduzca su email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            type="password"
-            placeholder="Introduzca su contraseña"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+    <>
+      <div className="container-main">
+        <div className="container">
+          <h1>Login</h1>
+          <form onSubmit={handleSubmit}>
+            <div className="input">
+              <label htmlFor="name">Username</label>
+              <input
+                id="name"
+                type="text"
+                placeholder="Enter your username"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className="input">
+              <label htmlFor="password">Password</label>
+              <input
+                id="password"
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
 
-        {error && <Error error={error} />}
+            {error && <Error error={error} />}
 
-        <input type="submit" value="Iniciar sesión" />
-      </form>
-    </div>
+            <input type="submit" value="Log In" />
+          </form>
+        </div>
+      </div>
+
+      <footer className="footer-login">
+        <p>&copy; 2022 - Made by Inma Caballero</p>
+      </footer>
+    </>
   );
 };
 
