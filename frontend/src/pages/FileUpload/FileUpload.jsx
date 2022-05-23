@@ -3,6 +3,7 @@ import { FileUploader } from "react-drag-drop-files";
 import axiosInstance from "../../utils/axios";
 import Spinner from "../../components/Spinner/Spinner";
 import FileExtension from "../../components/FileExtension/FileExtension";
+import {  formatDate, formatBytes } from "../../helpers";
 
 import "./FileUpload.css";
 
@@ -86,6 +87,9 @@ const FileUpload = () => {
                   <FileExtension file={file} />
                   <div className="file-description">
                     <p className="file-name">{file.name}</p>
+                    <p className="file-size-date">
+                      {formatDate(file.lastModified)} - {formatBytes(file.size)}
+                    </p>
                   </div>
                 </div>
               ))
