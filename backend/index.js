@@ -79,6 +79,8 @@ const authenticateUser = async (req, res) => {
 };
 app.post("/login", authenticateUser);
 
-const server = app.listen(8081, function () {
+const port = process.env.PORT || 8081;
+
+const server = app.listen(port, function () {
   console.log("Server started at 8081");
 });
