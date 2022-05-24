@@ -23,6 +23,10 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.get("/ping", function (req, res) {
+  res.json({ status: "OK" });
+});
+
 app.post("/upload_file", upload.array("files"), function (req, res) {
   if (!req.files) {
     throw Error("FILE_MISSING");
@@ -50,7 +54,11 @@ app.use(function (err, req, res, next) {
 // EXTRA
 app.use(bodyParser.json());
 
-app.post("/login", authenticateUser);
+const checkPassword = async (username, password) => {
+  const password_not_decrypted = "password";
+  const result = await bcrypt.compare(password_not_decrypted, password);
+  return result;
+};
 
 const authenticateUser = async (req, res) => {
   const { username, password } = req.body;
@@ -69,12 +77,7 @@ const authenticateUser = async (req, res) => {
 
   res.json({ responseAPI });
 };
-
-const checkPassword = async (username, password) => {
-  const password_not_decrypted = "password";
-  const result = await bcrypt.compare(password_not_decrypted, password);
-  return result;
-};
+app.post("/login", authenticateUser);
 
 const server = app.listen(8081, function () {
   console.log("Server started at 8081");
