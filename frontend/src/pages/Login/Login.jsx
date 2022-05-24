@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Error from "../../components/Error";
 import { useNavigate } from "react-router-dom";
-import bcrypt from "bcryptjs";
 import axiosInstance from "../../utils/axios";
+import bcrypt from "bcryptjs";
+import Error from "../../components/Error";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
 
     // Check the email and password is not empty and the password is at least 8 characters long.
-    if (name == "" && password == "") {
+    if (name === "" || password === "") {
       setError("All fields are required");
       return;
     }
@@ -35,20 +35,19 @@ const Login = () => {
     navigate("/fileUpload");
   };
 
-  // Encrypted password
-  const salt = bcrypt.genSaltSync(10);
-  const hashedPassword = bcrypt.hashSync(password, salt);
-
   const sendAPI = async () => {
-    if (name == "" && password == "") {
+    if (name === "" || password === "") {
       setError("All fields are required");
       return;
     }
 
     setError("");
 
+    // Encrypted password
+    const salt = bcrypt.genSaltSync(10);
+    const hashedPassword = bcrypt.hashSync(password, salt);
+
     const data = { username: name, password: hashedPassword };
-    console.log(hashedPassword);
 
     const result = await axiosInstance.post("/login", data);
 
