@@ -4,7 +4,7 @@ This code belongs to the MicroStock Growth technical access test.
 
 ## 📌 Table of contents
 
-- [Introduction](#🚀-introduction)
+- [Introduction](#introduction)
 - [Usage](#🔧-usage)
 - [Built with](#🛠-built-with)
   - [Frontend](#🖥-frontend)
