@@ -43,23 +43,23 @@ Finally, you will have the server at http://localhost:8081/ and the client at ht
 
 ## 🛠 Built with
 
-### Frontend
+### 🖥 Frontend
 
-- [react JS](https://reactjs.org/)
-- [react-router-dom](https://reactrouter.com/)
-- [react-toastify](https://www.npmjs.com/package/react-toastify)
-- [react-drag-drop-files](https://www.npmjs.com/package/react-drag-drop-files)
-- [axios](https://axios-http.com/)
-- [bcryptjs](https://www.npmjs.com/package/bcryptjs)
-- [ant-design](https://ant.design/)
+- [react JS](https://reactjs.org/): Web library used.
+- [react-router-dom](https://reactrouter.com/): Build the routing system.
+- [react-toastify](https://www.npmjs.com/package/react-toastify): To add the notification to the API results
+- [react-drag-drop-files](https://www.npmjs.com/package/react-drag-drop-files): Used to add the drag and drop file component.
+- [axios](https://axios-http.com/): To make HTTP requests to the server.
+- [bcryptjs](https://www.npmjs.com/package/bcryptjs): Used to encrypt password
+- [ant-design](https://ant.design/): To use the icons about the extension of the uploaded files.
 
-### Backend
+### ⚙️ Backend
 
-- [express](https://expressjs.com/)
-- [multer](https://www.npmjs.com/package/multer)
-- [cors](https://www.npmjs.com/package/cors)
-- [body-parser](https://www.npmjs.com/package/body-parser)
-- [bcryptjs](https://www.npmjs.com/package/bcryptjs)
+- [express](https://expressjs.com/): Node.js framework used.
+- [multer](https://www.npmjs.com/package/multer): Used to upload files to the server.
+- [cors](https://www.npmjs.com/package/cors): To allow our client to access the server's resources.
+- [body-parser](https://www.npmjs.com/package/body-parser): To read the HTTP request body.
+- [bcryptjs](https://www.npmjs.com/package/bcryptjs): Used to compare the encrypted password with the original password.
 
 ### 📦 Deployment
 
