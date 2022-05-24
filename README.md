@@ -2,7 +2,7 @@
 
 This code belongs to the MicroStock Growth technical access test.
 
-## 📜 Table of contents
+## 📌 Table of contents
 
 - [Introduction](#introduction)
 - [Usage](#🔧-usage)
@@ -19,8 +19,8 @@ The application consists of two parts:
 
 - The login page, where you will find a form to log in with your username and password. It has two buttons:
 
-1. The first button redirects you to the fileUpload page after doing some basic validations.
-2. The second button sends the content of the form to the server, which checks if the username is Growth and if the encrypted password sent from the form matches "password".
+    - 1. The first button redirects you to the fileUpload page after doing some basic validations.
+    - 2. The second button sends the content of the form to the server, which checks if the username is Growth and if the encrypted password sent from the form matches "password".
 
 - The fileUpload page, where files can be uploaded to the server, shows a process bar while they are being uploaded and finally information about the uploaded files. In particular, the name, the extension, the date of the last modification and the size of the file.
 
@@ -45,7 +45,7 @@ Finally, you will have the server at http://localhost:8081/ and the client at ht
 
 ### Frontend
 
-- [React](https://reactjs.org/)
+- [react JS](https://reactjs.org/)
 - [react-router-dom](https://reactrouter.com/)
 - [react-toastify](https://www.npmjs.com/package/react-toastify)
 - [react-drag-drop-files](https://www.npmjs.com/package/react-drag-drop-files)
