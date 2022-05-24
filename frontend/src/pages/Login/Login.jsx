@@ -20,22 +20,12 @@ const Login = () => {
 
     // Check the email and password is not empty and the password is at least 8 characters long.
     if (name == "" && password == "") {
-      setError("Los campos son obligatorios");
-      return;
-    }
-
-    if (name === "") {
-      setError("El nombre del usuario es obligatorio");
-      return;
-    }
-
-    if (password === "") {
-      setError("La contraseña es obligatoria");
+      setError("All fields are required");
       return;
     }
 
     if (password.length < 8) {
-      setError("La contraseña debe contener al menos 8 caracteres");
+      setError("The password must contain at least 8 characters");
       return;
     }
 
@@ -51,19 +41,15 @@ const Login = () => {
 
   const sendAPI = async () => {
     if (name == "" && password == "") {
-      setError("Los campos son obligatorios");
+      setError("All fields are required");
       return;
     }
 
-    if (name === "") {
-      setError("El nombre del usuario es obligatorio");
+    if (password.length < 8) {
+      setError("The password must contain at least 8 characters");
       return;
     }
 
-    if (password === "") {
-      setError("La contraseña es obligatoria");
-      return;
-    }
     setError("");
 
     const data = { username: name, password: hashedPassword };
