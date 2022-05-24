@@ -9,7 +9,7 @@ import upload from "./upload.js";
 const app = express();
 
 //Add the client URL to the CORS policy
-const whiteList = ["http://localhost:3000"];
+const whiteList = [process.env.FRONTEND_URL];
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || whiteList.indexOf(origin) !== -1) {
