@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import multer from "multer";
 import bodyParser from "body-parser";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 import upload from "./upload.js";
 
