@@ -82,5 +82,5 @@ app.post("/login", authenticateUser);
 const port = process.env.PORT || 8081;
 
 const server = app.listen(port, function () {
-  console.log("Server started at 8081");
+  console.log(`Server started at ${port}`);
 });
