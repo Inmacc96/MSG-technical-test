@@ -1,77 +1,35 @@
+/* ---------------------------- MAIN CONTAINER  ---------------------------- */
 .container-main {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  padding: 1.25rem;
-  min-height: calc(100vh - 86px);
+  margin: 0 auto;
+  padding: 0;
+  height: calc(100vh - 86px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* ---------------------------- CONTAINER  ---------------------------- */
+
 .container {
+  width: calc(2 * 100% / 4);
   background-color: #f5f5f5;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   border-radius: 0.5rem;
-  padding: 4rem 2.5rem;
-}
-
-/* ---------- sm ------------ */
-@media (min-width: 640px) {
-  .container-main {
-    max-width: 640px;
-  }
-}
-
-/* ---------- md ------------ */
-@media (min-width: 768px) {
-  .container-main {
-    max-width: 768px;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .container {
-    width: calc(2 * 100% / 3);
-  }
-}
-
-/* ---------- lg ------------ */
-@media (min-width: 1024px) {
-  .container-main {
-    max-width: 1024px;
-  }
-  .container {
-    width: calc(2 * 100% / 5);
-  }
-}
-
-/* ---------- xl ------------ */
-@media (min-width: 1280px) {
-  .container-main {
-    max-width: 1280px;
-  }
-}
-
-/* ---------- 2xl ------------ */
-@media (min-width: 1536px) {
-  .container-main {
-    max-width: 1536px;
-  }
+  padding: 1.75rem 2rem;
 }
 
 .container h1 {
   text-align: center;
   text-transform: capitalize;
   font-weight: 800;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 1.75rem;
   margin-top: 0;
 }
 
-.input {
+/* ---------------------------- FORM  ---------------------------- */
+
+.input-form {
   margin-top: 2.25rem;
   margin-bottom: 1.25rem;
   border-bottom: 2px solid #adadad;
@@ -80,14 +38,14 @@
 form label {
   display: block;
   color: rgb(75 85 99);
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
   font-weight: 700;
 }
 
 form input[type="text"],
 form input[type="password"] {
-  width: 100%;
+  width: 96%;
   margin-top: 0.75rem;
   padding: 0.75rem;
   border: none;
@@ -106,7 +64,7 @@ form input[type="submit"] {
   border-radius: 0.75rem;
   padding: 0.75rem;
   text-transform: uppercase;
-  margin-top: 3.5rem;
+  margin-top: 2.25rem;
   transition: 0.5s;
   opacity: 1;
 }
@@ -115,6 +73,8 @@ form input[type="submit"]:hover {
   cursor: pointer;
   opacity: 0.6;
 }
+
+/* ---------------------------- BUTTON SEND API ---------------------------- */
 
 .button-sendAPI {
   display: block;
@@ -128,7 +88,7 @@ form input[type="submit"]:hover {
   border-radius: 0.75rem;
   padding: 0.75rem;
   text-transform: uppercase;
-  margin-top: 2.5rem;
+  margin-top: 1.75rem;
   transition: 0.5s;
   opacity: 1;
 }
@@ -138,8 +98,85 @@ form input[type="submit"]:hover {
   opacity: 0.6;
 }
 
+/* ---------------------------- FOOTER  ---------------------------- */
+
 .footer-login p {
   padding-bottom: 35px;
   text-align: center;
   font-weight: 600;
+}
+
+/* ---------------------------- MEDIA QUERIES  ---------------------------- */
+
+/* ---------- sm ------------ */
+@media (min-width: 640px) {
+  .container-main {
+    max-width: 640px;
+  }
+
+  .container {
+    padding: 3rem 2rem;
+  }
+
+  .container h1 {
+    font-size: 2rem;
+  }
+
+  form label {
+    line-height: 1.75rem;
+  }
+
+  form input[type="submit"] {
+    margin-top: 3.5rem;
+  }
+
+  .button-sendAPI {
+    margin-top: 2.5rem;
+  }
+}
+
+/* ---------- md ------------ */
+@media (min-width: 768px) {
+  .container-main {
+    max-width: 768px;
+  }
+  .container {
+    width: calc(2 * 100% / 4);
+    padding: 4rem 2.5rem;
+  }
+
+  .container h1 {
+    font-size: 2.25rem;
+  }
+
+  form label {
+    font-size: 1.25rem;
+  }
+}
+
+/* ---------- lg ------------ */
+@media (min-width: 1024px) {
+  .container-main {
+    max-width: 1024px;
+  }
+  .container {
+    width: calc(2 * 100% / 5);
+  }
+}
+
+/* ---------- xl ------------ */
+@media (min-width: 1280px) {
+  .container-main {
+    max-width: 1280px;
+  }
+  .container {
+    width: calc(2 * 100% / 6);
+  }
+}
+
+/* ---------- 2xl ------------ */
+@media (min-width: 1536px) {
+  .container-main {
+    max-width: 1535px;
+  }
 }

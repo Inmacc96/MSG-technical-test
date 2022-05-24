@@ -86,7 +86,7 @@ const Login = () => {
         <div className="container">
           <h1>Login</h1>
           <form onSubmit={handleSubmit}>
-            <div className="input">
+            <div className="input-form">
               <label htmlFor="name">Username</label>
               <input
                 id="name"
@@ -96,7 +96,7 @@ const Login = () => {
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-            <div className="input">
+            <div className="input-form">
               <label htmlFor="password">Password</label>
               <input
                 id="password"
