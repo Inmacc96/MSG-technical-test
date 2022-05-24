@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import multer from "multer";
 import bodyParser from "body-parser";
+import bcrypt from "bcrypt";
 
 import upload from "./upload.js";
 
@@ -46,20 +47,32 @@ app.use(function (err, req, res, next) {
   }
 });
 
+// EXTRA
 app.use(bodyParser.json());
+
+const checkPassword = async (username, password) => {
+  const password_not_decrypted = "password";
+  const result = await bcrypt.compare(password_not_decrypted, password);
+  return result;
+};
 
 const authenticateUser = async (req, res) => {
   const { username, password } = req.body;
 
+  const responseAPI = {};
+
   // Check if the username is "Growth"
   if (username === "Growth") {
-    res.json({ msg: `Ok, your encrypted password is ${password}` });
+    responseAPI.msg = `Ok, your encrypted password is ${password}`;
   } else {
-    res.json({ msg: "NO" });
+    responseAPI.msg = "NO";
   }
-};
 
-const checkPassword = (username, password) => {};
+  // Check if the password is "password"
+  responseAPI.isValidPassword = await checkPassword(username, password);
+
+  res.json({ responseAPI });
+};
 
 app.post("/login", authenticateUser);
 
