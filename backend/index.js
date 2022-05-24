@@ -50,11 +50,7 @@ app.use(function (err, req, res, next) {
 // EXTRA
 app.use(bodyParser.json());
 
-const checkPassword = async (username, password) => {
-  const password_not_decrypted = "password";
-  const result = await bcrypt.compare(password_not_decrypted, password);
-  return result;
-};
+app.post("/login", authenticateUser);
 
 const authenticateUser = async (req, res) => {
   const { username, password } = req.body;
@@ -74,7 +70,11 @@ const authenticateUser = async (req, res) => {
   res.json({ responseAPI });
 };
 
-app.post("/login", authenticateUser);
+const checkPassword = async (username, password) => {
+  const password_not_decrypted = "password";
+  const result = await bcrypt.compare(password_not_decrypted, password);
+  return result;
+};
 
 const server = app.listen(8081, function () {
   console.log("Server started at 8081");
