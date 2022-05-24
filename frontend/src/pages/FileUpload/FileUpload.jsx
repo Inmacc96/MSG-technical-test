@@ -50,8 +50,6 @@ const FileUpload = () => {
             classes="file-uploader"
           />
 
-          {progress > 0 && progress < 100 && <Spinner />}
-
           {progress !== 0 && (
             <div className="progressbar">
               <div className="progressbar-info">
@@ -72,6 +70,8 @@ const FileUpload = () => {
               </div>
             </div>
           )}
+
+          {progress > 0 && progress < 100 && <Spinner />}
         </div>
         <div className="container-files">
           <h2> Uploaded files</h2>
