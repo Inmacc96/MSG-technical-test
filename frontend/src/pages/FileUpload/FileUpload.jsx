@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import axiosInstance from "../../utils/axios";
-import Spinner from "../../components/Spinner/Spinner";
-import FileExtension from "../../components/FileExtension/FileExtension";
+import Spinner from "../../components/Spinner";
+import FileExtension from "../../components/FileExtension";
 import { formatDate, formatBytes } from "../../helpers";
 
 import "./FileUpload.css";

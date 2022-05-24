@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Error from "../../components/Error/Error";
+import Error from "../../components/Error";
 import { useNavigate } from "react-router-dom";
 import bcrypt from "bcryptjs";
 import axiosInstance from "../../utils/axios";
@@ -59,9 +59,9 @@ const Login = () => {
     }
 
     if (result.data.responseAPI.isValidPassword) {
-      toast.success("Correct password")
-    } else{
-      toast.error("Incorrect password")
+      toast.success("Correct password");
+    } else {
+      toast.error("Incorrect password");
     }
 
     setName("");

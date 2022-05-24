@@ -8,7 +8,7 @@ import {
   FileFilled,
   FileMarkdownFilled,
 } from "@ant-design/icons";
-import { getExtensionFile } from "../../helpers";
+import { getExtensionFile } from "../helpers";
 
 const extensionsImages = [
   "png",
