@@ -45,21 +45,23 @@ const Login = () => {
       return;
     }
 
-    if (password.length < 8) {
-      setError("The password must contain at least 8 characters");
-      return;
-    }
-
     setError("");
 
     const data = { username: name, password: hashedPassword };
+    console.log(hashedPassword);
 
-    const response = await axiosInstance.post("/login", data);
+    const result = await axiosInstance.post("/login", data);
 
-    if (response.data.msg === "NO") {
-      toast.error(`${response.data.msg}`);
+    if (result.data.responseAPI.msg === "NO") {
+      toast.error(`${result.data.responseAPI.msg}`);
     } else {
-      toast.success(`${response.data.msg}`);
+      toast.success(`${result.data.responseAPI.msg}`);
+    }
+
+    if (result.data.responseAPI.isValidPassword) {
+      toast.success("Correct password")
+    } else{
+      toast.error("Incorrect password")
     }
 
     setName("");
