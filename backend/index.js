@@ -3,10 +3,13 @@ import cors from "cors";
 import multer from "multer";
 import bodyParser from "body-parser";
 import bcrypt from "bcryptjs";
+import dotenv from "dotenv";
 
 import upload from "./upload.js";
 
 const app = express();
+
+dotenv.config();
 
 //Add the client URL to the CORS policy
 const whiteList = [process.env.FRONTEND_URL];
