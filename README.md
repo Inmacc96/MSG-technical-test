@@ -4,7 +4,7 @@ This code belongs to the MicroStock Growth technical access test.
 
 ## 📌 Table of contents
 
-- [Introduction](#🚀-introduction)
+- [Introduction](#rocket-introduction)
 - [Usage](#🔧-usage)
   - [Environment variables](#📄-environment-variables)
 - [Built with](#🛠-built-with)
@@ -14,7 +14,7 @@ This code belongs to the MicroStock Growth technical access test.
 - [Links](#🖇-links)
 - [Author](#👩🏽-author)
 
-## 🚀 Introduction
+## :rocket: Introduction
 
 The application consists of two parts:
 
