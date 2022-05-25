@@ -6,7 +6,7 @@ This code belongs to the MicroStock Growth technical access test.
 
 - [Introduction](#🚀-introduction)
 - [Usage](#🔧-usage)
-  -[Environment variables](#📄-environment-variables)
+  - [Environment variables](#📄-environment-variables)
 - [Built with](#🛠-built-with)
   - [Frontend](#🖥-frontend)
   - [Backend](#⚙️-backend)
