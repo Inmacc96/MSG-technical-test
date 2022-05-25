@@ -4,7 +4,7 @@ This code belongs to the MicroStock Growth technical access test.
 
 ## 📌 Table of contents
 
-- [Introduction](#introduction)
+- [Introduction](#🚀-introduction)
 - [Usage](#🔧-usage)
 - [Built with](#🛠-built-with)
   - [Frontend](#🖥-frontend)
@@ -41,6 +41,20 @@ To deploy the project locally, follow these steps:
 
 Finally, you will have the server at http://localhost:8081/ and the client at http://locahost:3000/.
 
+### Environment variables
+
+It is **important** that an *.env* file is added to the backend folder with the following content:
+
+```
+FRONTEND_URL="http://localhost:3000"
+```
+
+and an *.env* file in the frontend folder with the following:
+
+```
+VITE_API_URL="http://localhost:8081/"
+```
+
 ## 🛠 Built with
 
 ### 🖥 Frontend
@@ -58,18 +72,18 @@ Finally, you will have the server at http://localhost:8081/ and the client at ht
 - [express](https://expressjs.com/): Node.js framework used.
 - [multer](https://www.npmjs.com/package/multer): Used to upload files to the server.
 - [cors](https://www.npmjs.com/package/cors): To allow our client to access the server's resources.
+- [dotenv](https://www.npmjs.com/package/dotenv): To access environment variables.
 - [body-parser](https://www.npmjs.com/package/body-parser): To read the HTTP request body.
 - [bcryptjs](https://www.npmjs.com/package/bcryptjs): Used to compare the encrypted password with the original password.
 
 ### 📦 Deployment
 
-- [Netlify](https://www.netlify.com/)
 - [Heroku](https://www.heroku.com)
 
 ## 🖇 Links
 
 - Solution URL: [https://github.com/Inmacc96/MSG-technical-test.git](https://github.com/Inmacc96/MSG-technical-test.git)
-- Live Site URL:
+- Live Site URL: [https://msg-technical-test.herokuapp.com/](https://msg-technical-test.herokuapp.com/)
 
 ## 👩🏽 Author
 
