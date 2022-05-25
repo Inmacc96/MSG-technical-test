@@ -15,7 +15,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  console.log(import.meta.env);
+  console.log(import.meta.env.VITE_API_URL);
 
   const handleSubmit = (e) => {
     e.preventDefault();
