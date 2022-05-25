@@ -6,6 +6,7 @@ This code belongs to the MicroStock Growth technical access test.
 
 - [Introduction](#🚀-introduction)
 - [Usage](#🔧-usage)
+  -[Environment variables](#📄-environment-variables)
 - [Built with](#🛠-built-with)
   - [Frontend](#🖥-frontend)
   - [Backend](#⚙️-backend)
@@ -39,20 +40,20 @@ To deploy the project locally, follow these steps:
 - `npm install`
 - `npm run dev`
 
-Finally, you will have the server at http://localhost:8081/ and the client at http://locahost:3000/.
+Finally, you will have the server at http://localhost:8081 and the client at http://locahost:3000.
 
-### Environment variables
+### 📄 Environment variables
 
-It is **important** that an *.env* file is added to the backend folder with the following content:
+It is important to add the *.env* file in the backend folder with the following content:
 
 ```
 FRONTEND_URL="http://localhost:3000"
 ```
 
-and an *.env* file in the frontend folder with the following:
+and the *.env* file in the frontend folder with the following:
 
 ```
-VITE_API_URL="http://localhost:8081/"
+VITE_API_URL="http://localhost:8081"
 ```
 
 ## 🛠 Built with
@@ -60,7 +61,7 @@ VITE_API_URL="http://localhost:8081/"
 ### 🖥 Frontend
 
 - [react JS](https://reactjs.org/): Web library used.
-- [react-router-dom](https://reactrouter.com/): Build the routing system.
+- [react-router-dom](https://reactrouter.com/): To build the routing system.
 - [react-toastify](https://www.npmjs.com/package/react-toastify): To add the notification to the API results
 - [react-drag-drop-files](https://www.npmjs.com/package/react-drag-drop-files): Used to add the drag and drop file component.
 - [axios](https://axios-http.com/): To make HTTP requests to the server.
