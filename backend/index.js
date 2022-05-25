@@ -15,8 +15,6 @@ dotenv.config();
 const whiteList = [process.env.FRONTEND_URL];
 const corsOptions = {
   origin: function (origin, callback) {
-    console.log(origin);
-    console.log(whiteList);
     if (!origin || whiteList.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
@@ -88,5 +86,4 @@ const port = process.env.PORT || 8081;
 
 const server = app.listen(port, function () {
   console.log(`Server started at ${port}`);
-  console.log(process.env.FRONTEND_URL);
 });
